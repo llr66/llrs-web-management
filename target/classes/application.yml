@@ -1,0 +1,39 @@
+spring:
+  application:
+    # Spring Boot 应用程序的名称
+    name: llrs-web-management
+  #数据库连接信息
+  datasource:
+    # 数据库驱动类
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 数据库连接地址
+    url: jdbc:mysql://localhost:3306/llrs
+    # 数据库用户名
+    username: root
+    # 数据库密码
+    password: happylittlebaby2
+
+  servlet:
+    # 文件上传时的最大文件大小限制为 10MB
+    max-file-size: 10MB
+    # 文件上传时的最大请求大小限制为 100MB
+    max-request-size: 100MB
+#Mybatis配置
+mybatis:
+  configuration:
+    # MyBatis 的日志输出实现，输出到标准输出流
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    # MyBatis 配置，将下划线命名方式的数据库字段自动转换为驼峰命名方式
+    map-underscore-to-camel-case: true
+
+#自定义的阿里云oss配置信息
+aliyun:
+  oss:
+    endpoint: https://oss-cn-guangzhou.aliyuncs.com
+    accessKeyId: LTAI5tBme6X8tmKvTHWHE9or
+    accessKeySecret: MIbODHTBzOJoC2wJRNZ450c0lWEPT9
+    bucketName: llrbucket
+#spring事务管理日志
+logging:
+  level:
+    org.springframework.jdbc.support.JdbcTransactionManager: debug
